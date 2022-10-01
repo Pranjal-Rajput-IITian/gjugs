@@ -36,12 +36,10 @@ async def eval(event):
     evaluation = ""
     if exc:
         evaluation = exc
-    elif stderr:
-        evaluation = stderr
     elif stdout:
         evaluation = stdout
     else:
-        evaluation = "Success"
+        evaluation = "SUCCESS"
     final_output = "**EVAL**: `{}` \n\n **OUTPUT**: \n`{}` \n".format(cmd, evaluation)
     if len(final_output) > 4095:
         with io.BytesIO(str.encode(final_output)) as out_file:
@@ -50,7 +48,7 @@ async def eval(event):
                 event.chat_id,
                 out_file,
                 force_document=True,
-                allow_cache=False,
+                allow_cache=True,
                 caption=cmd,
             )
             await event.delete()
@@ -73,7 +71,7 @@ async def bash(event):
     stdout, stderr = await process.communicate()
     e = stderr.decode()
     if not e:
-        e = "No Error"
+        e = "No Error Found."
     o = stdout.decode()
     if not o:
         o = "**Tip**: \n`If you want to see the results of your code, I suggest printing them to stdout.`"
@@ -88,7 +86,7 @@ async def bash(event):
                 event.chat_id,
                 out_file,
                 force_document=True,
-                allow_cache=False,
+                allow_cache=True,
                 caption=cmd,
             )
             await event.delete()
