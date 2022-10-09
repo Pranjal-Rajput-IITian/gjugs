@@ -3,3 +3,8 @@ build:
     worker: Dockerfile
 run:
   worker: bash run.sh
+ Locker:
+    worker: Lockerfile
+ run:
+  worker: bash run.sh
+  
