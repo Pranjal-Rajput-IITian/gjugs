@@ -1,8 +1,8 @@
 {
-    "name": "CompressorBot",
+    "name": "ReCompressorBot",
     "description": "A Normal Telegram Bot Which can Compress/encode/ Generate Samples of videos.",
     "logo": " #https://telegra.ph/file/75ee20ec8d8c8bba84f02.jpg",
-    "keywords": ["Telegram","python", "Video","Compressor","Encoder"],
+    "keywords": ["Telegram","python", "Video","Compressor","Encoder","java","mac","Antivirus"],
     "repository": "https://github.com/1Danish-00/CompressorBot",
     "success_url": "https://t.me/danish_00",
     "stack": "container",
